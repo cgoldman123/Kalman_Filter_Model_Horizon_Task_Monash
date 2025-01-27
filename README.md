@@ -1,6 +1,6 @@
 # Horizon Model Fitting and Simulation Code
 
-This repository contains MATLAB scripts for fitting and simulating horizon-based decision-making models using behavioral data.
+This repository contains MATLAB scripts for fitting behavioral data for the Horizon Task
 
 ## File Descriptions (in Order of Execution)
 
@@ -28,13 +28,12 @@ This repository contains MATLAB scripts for fitting and simulating horizon-based
      - Loads processed data using `load_horizon_data.m`.
      - Initializes model parameters and structures data for fitting.
      - Fits the model by invoking `horizon_inversion.m`.
-     - Computes fit metrics, including exploration behaviors and model accuracy.
+     - Computes fit metrics, including average action probability and model accuracy.
 
 5. **load_horizon_data.m**  
    - **Purpose**: Reads processed data and converts it into a structured format for model fitting.
    - **Key Features**:
-     - Augments data with z-scored reaction times and reward-related metrics.
-     - Creates variables for tracking exploration behaviors (e.g., random and directed exploration).
+     - Assembles data so that it can be passed as input to the model
 
 6. **horizon_inversion.m**  
    - **Purpose**: Implements model inversion using Variational Bayes.
@@ -43,9 +42,8 @@ This repository contains MATLAB scripts for fitting and simulating horizon-based
      - Returns fitted parameters and free-energy values.
 
 7. **model_KFcond_v2_SMT_CMG.m**  
-   - **Purpose**: Simulates decision-making behaviors using a Kalman filter-based model.
+   - **Purpose**: Kalman filter-based model.
    - **Key Features**:
-     - Simulates participant choices using the fitted parameters.
      - Evaluates action probabilities for free-choice trials.
 
 ## Usage Instructions
